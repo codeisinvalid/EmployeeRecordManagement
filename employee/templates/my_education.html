@@ -1,0 +1,86 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+
+
+<div class= "card shadow m-2">
+    <div class="card-body">
+        <a href="{%url 'edit_myeducation'%}" class="button float-right btn-sm">Edit Education Details</a>
+        <h5  class = "p-2 text-danger" style="border-bottom: 2px solid #EB796F ">My Education Details</h5>
+        <div class="container-fluid">
+           <table class="table table-bordered">
+            <tr>
+                <th>Post Graduation: Course </th>
+                <td>{{education.course_pg}}</td>
+            </tr>
+            <tr>
+                <th>Post Graduation: College/University</th>
+                <td>{{education.schoolcollege_pg}}</td>
+            </tr>
+            <tr>
+                <th>Post Graduation: Year of completion</th>
+                <td>{{education.year_of_passing_pg}}</td>
+            </tr>
+            <tr>
+                <th>Post Graduation: Percentage Obtained</th>
+                <td>{{education.percentage_pg}}</td>
+            </tr>
+            <tr>
+                <th>Graduation: Course</th>
+                <td>{{education.course_grad}}</td>
+            </tr>
+            <tr>
+                <th>Graduation: College/University</th>
+                <td>{{education.schoolcollege_grad}}</td>
+            </tr>
+            <tr>
+                <th>Graduation: Year of completion</th>
+                <td>{{education.year_of_passing_grad}}</td>
+            </tr>
+            <tr>
+                <th>Graduation: Percentage Obtained</th>
+                <td>{{education.percentage_grad}}</td>
+            </tr>
+
+            <tr>
+                <th>Higher Secondary: Course</th>
+                <td>{{education.course_hsec}}</td>
+            </tr>
+            <tr>
+                <th>Higher Secondary: School/College</th>
+                <td>{{education.schoolcollege_hsec}}</td>
+            </tr>
+            <tr>
+                <th>Higher Secondary: Year of Completion</th>
+                <td>{{education.year_of_passing_hsec}}</td>
+            </tr>
+            <tr>
+                <th>Higher Secondary: Percentage Obtained</th>
+                <td>{{education.percentage_hsec}}</td>
+            </tr>
+
+            <tr>
+                <th>Secondary: Course</th>
+                <td>{{education.course_sec}}</td>
+            </tr>
+            <tr>
+                <th>Secondary: School/College</th>
+                <td>{{education.schoolcollege_sec}}</td>
+            </tr>
+            <tr>
+                <th>Secondary: Year of Completion</th>
+                <td>{{education.year_of_passing_sec}}</td>
+            </tr>
+            <tr>
+                <th>Secondary: Percentage Obtained</th>
+                <td>{{education.percentage_sec}}</td>
+            </tr>
+
+            
+           </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock main%}
