@@ -1,0 +1,26 @@
+{% load static %}
+{% include "header.html" %}
+
+
+
+
+{% block content %}
+
+{% comment %} content {% endcomment %}
+
+{% endblock content %}
+
+{% include "footer.html" %}
+
+<!-- Vendor JS Files -->
+<script src="{% static 'purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'aos/aos.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'waypoints/noframework.waypoints.js' %}"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
