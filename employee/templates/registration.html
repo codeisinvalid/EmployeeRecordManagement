@@ -1,229 +1,127 @@
-{% include 'header.html' %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
 
 <script>
-    function checkpassword(){
-        if(document.signup.password.value!=document.signup.confirm_password.value){
-            alert('Passwords do not match');
-            document.signup.confirm_password.focus();
-            return false;
-        }
-        return true;  
-    }
+  function checkpassword(){
+      if(document.signup.password.value!=document.signup.confirm_password.value){
+          alert('Passwords do not match');
+          document.signup.confirm_password.focus();
+          return false;
+      }
+      return true;  
+  }
 </script>
 
+
+<section class="registration">
+  <div class="container">
+
+
+
+    
+<script>
+  function checkpassword(){
+      if(document.signup.password.value!=document.signup.confirm_password.value){
+          alert('Passwords do not match');
+          document.signup.confirm_password.focus();
+          return false;
+      }
+      return true;  
+  }
+</script>
+
+<div class="section-title">
+  <h2>Registration</h2>
+  <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+</div>
+
+
 <div class= "card shadow m-4">
-    <div class="card-body">
-        <h5  class = "p-2 text-danger"style="border-bottom: 2px solid #EB796F ">Create an account</h5>
+      <div class="container-fluid pt-3">
+          <form method="POST" name="signup" onsubmit="return checkpassword()">
+              {% csrf_token %}
 
-    </div>
+              <div class="form-row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label>First Name</label>
+                          <input type="text" name='firstname' class='form-control' placeholder="Enter your first name" pattern="[A-Za-z]+" required>
+                      </div>   
+                  </div>
+                  <br>
 
-</div>
-<div class= "card shadow m-4">
-        <div class="container-fluid pt-3">
-            <form method="POST" name="signup" onsubmit="return checkpassword()">
-                {% csrf_token %}
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label>Last Name</label>
+                          <input type="text" name='lastname' class='form-control' placeholder="Enter your last name" pattern="[A-Za-z]+" required>
+                      </div>   
+                  </div>
+                  <br>
 
-                <div class="form-row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name='firstname' class='form-control' placeholder="Enter your first name" pattern="[A-Za-z]+" required>
-                        </div>   
-                    </div>
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label>Employee Card Code</label>
+                          <input type="text" name='empcode' class='form-control' placeholder="Enter your employee card code" pattern="[0-9A-Za-z]+" required>
+                      </div>   
+                  </div>
 
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name='lastname' class='form-control' placeholder="Enter your last name" pattern="[A-Za-z]+" required>
-                        </div>   
-                    </div>
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="email" name='email' class='form-control' placeholder="Enter your email" required>
+                      </div>   
+                  </div>
 
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                            <label>Employee Card Code</label>
-                            <input type="text" name='empcode' class='form-control' placeholder="Enter your employee card code" pattern="[0-9A-Za-z]+" required>
-                        </div>   
-                    </div>
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label>Password</label>
+                          <input type="password" name='password' class='form-control'placeholder="Enter your password" required>
+                      </div>   
+                  </div>
 
-                    <div class="col-sm-11">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name='email' class='form-control' placeholder="Enter your email" required>
-                        </div>   
-                    </div>
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label>Confirm your Password</label>
+                          <input type="password" name='confirm_password' class='form-control'placeholder="Re-enter your password" required>
+                      </div>   
+                  </div>
 
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name='password' class='form-control'placeholder="Enter your password" required>
-                        </div>   
-                    </div>
+              </div>
+              <br>
+              
+              <input type="submit" value="Submit" class="form-control">
+              
 
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Confirm your Password</label>
-                            <input type="password" name='confirm_password' class='form-control'placeholder="Re-enter your password" required>
-                        </div>   
-                    </div>
-
-                </div>
-                
-                <input type="submit" value="Submit" class="button">
-
-            </form>
-        </div>
+          </form>
+      </div>
 </div>
 
-<footer
-class="text-center text-lg-start text-white"
-style="background-color: #EB796F"
->
-<!-- Section: Social media -->
-<section
-   class="d-flex justify-content-between p-4"
-   style="background-color: #EEA390"
-   >
-<!-- Left -->
-<div class="me-5">
-<span>Get connected with us on social networks:</span>
-</div>
-<!-- Left -->
-
-<!-- Right -->
-<div>
-<a href="" class="text-white me-4">
-<i class="fab fa-facebook-f me-4"></i>
-</a>
-<a href="" class="text-white me-4">
-<i class="fab fa-twitter"></i>
-</a>
-<a href="" class="text-white me-4">
-<i class="fab fa-google"></i>
-</a>
-<a href="" class="text-white me-4">
-<i class="fab fa-instagram"></i>
-</a>
-<a href="" class="text-white me-4">
-<i class="fab fa-linkedin"></i>
-</a>
-<a href="" class="text-white me-4">
-<i class="fab fa-github"></i>
-</a>
-</div>
-<!-- Right -->
-</section>
-<!-- Section: Social media -->
-
-<!-- Section: Links  -->
-<section class="">
-<div class="container text-center text-md-start mt-5">
-<!-- Grid row -->
-<div class="row mt-3">
-<!-- Grid column -->
-<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-  <!-- Content -->
-  <h6 class="text-uppercase fw-bold">Codeisinvalid</h6>
-  <hr
-      class="mb-4 mt-0 d-inline-block mx-auto"
-      style="width: 60px; background-color: #7c4dff; height: 2px"
-      />
-  <p>
-    Here you can use rows and columns to organize your footer
-    content. Lorem ipsum dolor sit amet, consectetur adipisicing
-    elit.
-  </p>
-</div>
-<!-- Grid column -->
-
-<!-- Grid column -->
-<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-  <!-- Links -->
-  <h6 class="text-uppercase fw-bold">Products</h6>
-  <hr
-      class="mb-4 mt-0 d-inline-block mx-auto"
-      style="width: 60px; background-color: #7c4dff; height: 2px"
-      />
-  <p>
-    <a href="#!" class="text-white">Web Applications</a>
-  </p>
-  <p>
-    <a href="#!" class="text-white">Mobile Applications</a>
-  </p>
-  <p>
-    <a href="#!" class="text-white">Data Analysis</a>
-  </p>
-  <p>
-    <a href="#!" class="text-white">Content Writing</a>
-  </p>
-</div>
-<!-- Grid column -->
-
-<!-- Grid column -->
-<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-  <!-- Links -->
-  <h6 class="text-uppercase fw-bold">Useful links</h6>
-  <hr
-      class="mb-4 mt-0 d-inline-block mx-auto"
-      style="width: 60px; background-color: #7c4dff; height: 2px"
-      />
-  <p>
-    <a href="{%url 'index' %}" class="text-white">Home</a>
-  </p>
-  <p>
-    <a href="{%url 'login' %}" class="text-white">Employee Login</a>
-  </p>
-  <p>
-    <a href="{%url 'registration' %}" class="text-white">Employee sign up</a>
-  </p>
-  <p>
-    <a href="{%url 'admin' %}" class="text-white">Admin</a>
-  </p>
-</div>
-<!-- Grid column -->
-
-<!-- Grid column -->
-<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-  <!-- Links -->
-  <h6 class="text-uppercase fw-bold">Contact</h6>
-  <hr
-      class="mb-4 mt-0 d-inline-block mx-auto"
-      style="width: 60px; background-color: #7c4dff; height: 2px"
-      />
-  <p><i class="fas fa-home mr-3"></i> Batulechour, Pokhara-16, Nepal</p>
-  <p><i class="fas fa-envelope mr-3"></i> info@codeisinvalid.com</p>
-  <p><i class="fas fa-phone mr-3"></i> +977 9846945338</p>
-  <p><i class="fas fa-print mr-3"></i> +977 9818081699</p>
-</div>
-<!-- Grid column -->
-</div>
-<!-- Grid row -->
-</div>
-</section>
-<!-- Section: Links  -->
-
-<!-- Copyright -->
-<div
-class="text-center p-3"
-style="background-color: rgba(0, 0, 0, 0.2)"
->
-© 2023 Copyright:
-<a class="text-white" href="https://codeisinvalid.com/"
->codeisinvalid.com</a
->
-</div>
-<!-- Copyright -->
-</footer>
-<!-- Footer -->
 
 
 {%if error == "no" %}
 <script>
-    alert('Signup successful');
-    window.location= ('{% url 'login' %}');
+  alert('Signup successful');
+  window.location= ('{% url 'login' %}');
 </script>
 {% endif %}
 {% if error == "yes" %}
 <script>
-    alert('Something went wrong. Try again!');
+  alert('Something went wrong. Try again!');
 </script>
 {% endif %}
+
+
+
+
+
+  </div>
+</section>
+
+
+
+{% endblock content %}
+
