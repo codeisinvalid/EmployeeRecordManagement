@@ -3,15 +3,20 @@
 {% block main %}
 
 
-<div class= "card shadow m-2">
+<div class= "card  m-2">
     <div class="card-body">
-        <a href="{%url 'my_education'%}" class="button float-right btn-sm">View My Education Details</a>
-        <h5  class = "p-2 text-danger" style="border-bottom: 2px solid #EB796F ">Edit Education Details</h5>
+        <div class="section-title">
+            <h2>Edit Education Details</h2>
+          </div>
+
         <div class="container-fluid">
+        <a href="{%url 'my_education'%}" class="button float-right btn-sm">View My Education Details</a>
+        <br>
             <form method="POST">
                     {% csrf_token %}
                 
                 <table class="table table-bordered">
+                    <br>
                     <tr>
                         <th>Post Graduation: Course</th>
                         <td><input type="text" name="course_pg" class="form-control" value ="{{education.course_pg}}"></td>

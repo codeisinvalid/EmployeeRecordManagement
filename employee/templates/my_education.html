@@ -3,12 +3,16 @@
 {% block main %}
 
 
-<div class= "card shadow m-2">
+<div class= "card m-2">
     <div class="card-body">
+        <div class="section-title">
+            <h2>Education</h2>
+        </div>
+    <div class="container-fluid">
         <a href="{%url 'edit_myeducation'%}" class="button float-right btn-sm">Edit Education Details</a>
-        <h5  class = "p-2 text-danger" style="border-bottom: 2px solid #EB796F ">My Education Details</h5>
-        <div class="container-fluid">
+       <br>
            <table class="table table-bordered">
+            <br>
             <tr>
                 <th>Post Graduation: Course </th>
                 <td>{{education.course_pg}}</td>

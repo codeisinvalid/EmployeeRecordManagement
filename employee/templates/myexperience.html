@@ -3,12 +3,19 @@
 {% block main %}
 
 
-<div class= "card shadow m-2">
+<div class= "card  m-2">
     <div class="card-body">
+        <div class="section-title">
+            <h2>Work Experience</h2>
+          </div>
+          <div class="container-fluid">
         <a href="{%url 'edit_experience'%}" class="button float-right btn-sm">Edit work experiences</a>
-        <h5  class = "p-2 text-danger" style="border-bottom: 2px solid #EB796F ">My work experience</h5>
-        <div class="container-fluid">
+        
+                <br>
+                
            <table class="table table-bordered">
+            <br>
+            
             <tr>
                 <th>First company name</th>
                 <td>{{experience.company1name}}</td>

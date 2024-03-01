@@ -3,16 +3,21 @@
 {% block main %}
 
 
-<div class= "card shadow m-2">
+<div class= "card m-2">
     <div class="card-body">
+        <div class="section-title">
+            <h2>Edit Work Experience</h2>
+          </div>
+          <div class="container-fluid">
         <a href="{%url 'myexperience'%}" class="button float-right btn-sm">View my work experiences</a>
-        <h5  class = "p-2 text-danger" style="border-bottom: 2px solid #EB796F ">Edit work experience</h5>
-        <div class="container-fluid">
+        <br>
             <form method="POST">
                     {% csrf_token %}
                 
                 <table class="table table-bordered">
+                    <br>
                     <tr>
+                        
                         <th>First company name</th>
                         <td><input type="text" name="company1name" class="form-control" value ="{{experience.company1name}}"></td>
                     </tr>
