@@ -94,7 +94,7 @@ def profile(request):
 
 def Logout(request):
     logout(request)
-    return redirect('index')
+    return redirect('login')
 
 
 def admin_login(request):
