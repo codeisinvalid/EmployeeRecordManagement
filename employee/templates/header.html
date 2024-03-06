@@ -44,10 +44,10 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active " href="{%url 'index' %}">Home</a></li>
-          <li><a href="{%url 'registration' %}">Registration</a></li>
-          <li><a href="{%url 'login' %}">Login</a></li>
-          <li><a href="{%url 'admin' %}">Admin</a></li>
+          <li><a class="{% if request.path == '/' %}active{% endif %}" href="{%url 'index' %}">Home</a></li>
+          <li><a class="{% if request.path == '/registration/' %}active{% endif %}" href="{%url 'registration' %}">Registration</a></li>
+          <li><a  class="{% if request.path == '/emp_login/' %}active{% endif %}" href="{%url 'login' %}">Login</a></li>
+          <li><a class = "{% if request.path == '/admin/' %}active{% endif %}" href="{%url 'admin' %}">Admin</a></li>
           
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
