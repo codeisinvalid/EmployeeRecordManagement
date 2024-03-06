@@ -61,3 +61,15 @@ class EmployeeExperience(models.Model):
     def __str__(self):
         return self.user.username
     
+
+class ContactSubmission(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+    submission_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.submission_date}"
+
+    

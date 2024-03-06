@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
+
 
 
 # Create your views here.
@@ -457,4 +460,23 @@ def edit_userexperience(request,pid):
 
 
 def contactus(request):
+
+    if request.method =="POST":
+        contact = ContactSubmission()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        contact.name = name
+        contact.email = email
+        contact.subject = subject
+        contact.message = message
+
+        contact.save()
+        messages.success(request, "तपाईंको सन्देश सफलतापूर्वक पेश गरिएको छ")
+        return HttpResponseRedirect(reverse_lazy('contactus'))
+
+
+
     return render(request, 'contactus.html')
