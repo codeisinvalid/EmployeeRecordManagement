@@ -484,7 +484,7 @@ def contactus(request):
         contact.message = message
 
         contact.save()
-        messages.success(request, "तपाईंको सन्देश सफलतापूर्वक पेश गरिएको छ")
+        messages.success(request, "Your message has been sent successfully")
         return HttpResponseRedirect(reverse_lazy('contactus'))
 
     return render(request, 'contactus.html', {'page_title': page_title})
