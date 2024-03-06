@@ -9,9 +9,12 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    page_title = "Easy Corp"
+    return render(request, 'index.html', locals())
+
 
 def registration(request):
+    page_title = "Employee Registration - Easy Corp"
     error = ""
     if request.method =="POST":
         fn = request.POST['firstname']
@@ -34,7 +37,9 @@ def registration(request):
 
     return render(request, 'registration.html', locals())
 
+
 def emp_login(request):
+    page_title = "Employee Login - Easy Corp"
     error=""
     if request.method=="POST":
         u = request.POST['emailid']
@@ -176,6 +181,7 @@ def edit_experience(request):
 
     return render(request, 'edit_experience.html', locals())
 
+
 def my_education(request):
     if not request.user.is_authenticated:
         return redirect('login')
@@ -241,6 +247,7 @@ def edit_myeducation(request):
             error = "yes"
 
     return render(request, 'edit_myeducation.html', locals())
+
 
 def change_password(request):
     if not request.user.is_authenticated:
@@ -344,6 +351,7 @@ def edit_profile(request, pid):
 
     return render(request, 'edit_profile.html', locals())
 
+
 def edit_education(request, pid):
 
     if not request.user.is_authenticated:
@@ -401,6 +409,7 @@ def edit_education(request, pid):
             error = "yes"
     return render(request, 'edit_education.html', locals())
 
+
 def delete_employee(request, pid):
     if not request.user.is_authenticated:
         redirect('admin_home')
@@ -410,6 +419,7 @@ def delete_employee(request, pid):
     messages.success(request, "The user is deleted")
 
     return render (request, 'admin_home.html')
+
 
 def edit_userexperience(request,pid):
     if not request.user.is_authenticated:
@@ -458,9 +468,9 @@ def edit_userexperience(request,pid):
     return render(request, 'edit_userexperience.html', locals())
 
 
-
 def contactus(request):
 
+    page_title = "Contact Us - EasyCorp"
     if request.method =="POST":
         contact = ContactSubmission()
         name = request.POST.get('name')
@@ -477,6 +487,4 @@ def contactus(request):
         messages.success(request, "तपाईंको सन्देश सफलतापूर्वक पेश गरिएको छ")
         return HttpResponseRedirect(reverse_lazy('contactus'))
 
-
-
-    return render(request, 'contactus.html')
+    return render(request, 'contactus.html', {'page_title': page_title})

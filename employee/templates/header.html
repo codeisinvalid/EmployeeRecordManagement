@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Easy Corp.</title>
+  <title>{{ page_title }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'images/favicon.png' %}" rel="icon">
-  <link href="{% static 'images/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'images/logo.png' %}" rel="icon">
+  <link href="{% static 'images/logo.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -37,17 +37,18 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1 class="text-light"><a href="{% url 'index' %}"><span>Easy Corp.</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="" class="img-fluid" ><span>     Easy Corp.</span>
+        <h1 class="text-light"><a href="{% url 'index' %}"><span></span></a></h1>
+      
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="{% if request.path == '/' %}active{% endif %}" href="{%url 'index' %}">Home</a></li>
+          <li><a class="{% if request.path == '/contactus/' %}active{% endif %}" href="{%url 'contactus' %}">Contact Us</a></li>
           <li><a class="{% if request.path == '/registration/' %}active{% endif %}" href="{%url 'registration' %}">Registration</a></li>
           <li><a  class="{% if request.path == '/emp_login/' %}active{% endif %}" href="{%url 'login' %}">Login</a></li>
-          <li><a class = "{% if request.path == '/admin/' %}active{% endif %}" href="{%url 'admin' %}">Admin</a></li>
+          <li><a class="{% if request.path == '/admin/' %}active{% endif %}" href="{%url 'admin' %}">Admin</a></li>
           
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
