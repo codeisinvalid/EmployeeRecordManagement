@@ -40,5 +40,6 @@ urlpatterns = [
     path('edit_education/<int:pid>', edit_education, name="edit_education"),
     path('delete_employee/<int:pid>', delete_employee, name="delete_employee"),
     path('edit_userexperience/<int:pid>', edit_userexperience, name='edit_userexperience'),
+    path('contactus', contactus, name='contactus'),
 
 ]
