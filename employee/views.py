@@ -488,3 +488,9 @@ def contactus(request):
         return HttpResponseRedirect(reverse_lazy('contactus'))
 
     return render(request, 'contactus.html', {'page_title': page_title})
+
+def services(request):
+    return render(request, 'services.html')
+
+def aboutus(request):
+    return render(request, 'aboutus.html')
