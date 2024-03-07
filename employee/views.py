@@ -490,7 +490,9 @@ def contactus(request):
     return render(request, 'contactus.html', {'page_title': page_title})
 
 def services(request):
-    return render(request, 'services.html')
+    page_title = "Services - EasyCorp"
+    return render(request, 'services.html',  {'page_title': page_title})
 
 def aboutus(request):
-    return render(request, 'aboutus.html')
+    page_title = "About us - EasyCorp"
+    return render(request, 'aboutus.html',  {'page_title': page_title})
